@@ -1,0 +1,21 @@
+class Solution {
+    public boolean checkPerfectNumber(int num) {
+
+        int result = 0;
+        if(num == 1)
+            return false;
+
+        for(int i =1;i<=Math.sqrt(num);i++)
+        {
+            if(num%i == 0)
+            {
+                result += i;
+                if( i>1 && num % (num/i) == 0)
+                     result += num/i;
+            }
+        }
+
+        return result==num;
+        
+    }
+}
