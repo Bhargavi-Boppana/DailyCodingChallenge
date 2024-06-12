@@ -1,0 +1,33 @@
+class Solution {
+    int isDigitSumPalindrome(int n) {
+        int sum = 0;
+        
+        while(n>0)
+        {
+            int digit = n%10;
+            sum += digit;
+            n = n/10;
+            
+        }
+        return  isPalindrome(sum) ? 1: 0;
+    }
+    
+    boolean isPalindrome(int n)
+    {
+        String str = String.valueOf(n);
+        char[] chArray = str.toCharArray();
+        int low = 0;
+        int high = str.length()-1;
+        
+        while(low < high)
+        {
+            if(chArray[low] != chArray[high])
+            {
+                return false;
+            }
+            low++;
+            high--;
+        }
+        return true;
+    }
+}
