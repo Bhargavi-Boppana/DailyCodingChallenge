@@ -1,0 +1,28 @@
+class Solution{
+  
+    static long largestPrimeFactor(int N) {
+        // code here
+        int maxPrime = -1;
+        int i = 2;
+        while(i*i <= N)
+        {
+            while(N%i == 0)
+            {
+                maxPrime = i;
+                N = N/i;
+            }
+            i = i+1;
+        }
+        
+        if( N>1)
+        {
+           maxPrime = N; 
+        }
+        
+        return maxPrime;
+      
+    
+ 
+    }  
+    
+}
